@@ -61,6 +61,51 @@ $('.input-messaggi').focus(function(){
 
 // INTEGRO LA RICERCA UTENTE
 
-$('.cerca_utente').click(function(){
 
+
+$('.cerca_utente').click(function(){
+var ricerca_utente = $('.input-contatti').val();
+  // seleziono gli li e al click metto a tutti il display none
+  $('li').hide();
+
+  $('li').each(function(){
+    if (ricerca_utente.toLowerCase() == $(this).text().toLowerCase()) {
+       $(this).show();
+    }
+  });
+
+
+  //TEST RICERCA utente
+  // (function(){
+  //   var $contact =$('.contatti ul li');
+  //   var $ricerca =$('input-contatti');
+  //   var cache=[];
+  //
+  //   $contact.each(function(){
+  //     cache.push({
+  //      element : this,
+  //      text: this.text().trim().toLowerCase()
+  //     });
+  //   });
+  //
+  //   function filter(){
+  //     var query = this.value.trim().toLowerCase();
+  //
+  //     cache.forEach(function(li){
+  //       var index =0;
+  //       if(query){
+  //         index=li.text.indexOf(query);
+  //       }
+  //       li.element.style.display =index === -1 ? 'none' : '';
+  //     });
+  //   }
+  //   if('oninput' in $search[0]){
+  //     $search.on('input', filter);
+  //   }else{
+  //     $search.one('keyup', filter);
+  //   }
+  // }());
+
+  //RESETTO LA INPUT
+  $(".input-contatti").val('');
 });

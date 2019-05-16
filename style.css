@@ -13,6 +13,9 @@
   flex-direction: row-reverse ;
 }
 
+.contenitore_messaggi_veri{
+  overflow-y: auto;
+}
 .area-mess,
 .area-contatti{
   display: flex;
@@ -65,8 +68,7 @@
 .area-contatti{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
 }
 
 /* STILE PER I MESSAGGIO E LE DIREZIONI IN BASE ALL'UTENTE CHE SCRIVE */
@@ -135,7 +137,9 @@
     margin-right: 30px;
 }
 
-.cerca_utente{}
+.cerca_utente{
+
+}
 
 .search-bar{
   width: 100%;

@@ -11,31 +11,39 @@
 // - Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
 
 $('.icona-destra-footer').click(function() {
+   send_message();
+});
 
+//intercetto il testo invio
+$(".input-messaggi").keypress(function(event) {
+   if (event.which==13) {
+      send_message();
+   }
+});
+
+//INSERISCO TUTTO IL BLOCCO DI ISTRUZIONI IN UNA FUNZIONE PER RIUTILIZZARLA IN PIU' PARTI DEL CODICE
+function send_message(){
+  var messaggio_utente =$(".input-messaggi").val();
   //inserisco un controllo per dire che solo se ci sta qualcosa nell'input messaggi allora pubblico altrimenti no
   if($(".input-messaggi").val()!=0){
     //leggo il meggaggio inserito dall'messaggio_utente
-    var messaggio_utente =$(".input-messaggi").val();
+
     console.log(messaggio_utente);
     //copio la struttura del messaggio base
     var message_template =$('.container_messaggi.nascondi_template').clone();
-
     console.log(message_template);
-
     message_template.removeClass('nascondi_template');
     //COPIO NEL FIGLIO MESSAGGI DI CONTAINER_MESSAGGI IL MESSAGGIO RICEVUTO IN INPUT DALL'UTENTE
     message_template.addClass('destra').children('.messaggi').addClass('mine').html(messaggio_utente);
-
     // INDERISCO ORA LA VARIABILE message_template DENTRO LA MIA STRUTTURA HTML
     $('.contenitore_messaggi_veri').append(message_template);
-
     //RESETTO LA INPUT
     $(".input-messaggi").val('');
   }
-});
+}
+
 
 //cambio l'icona al focus
-
 $('.input-messaggi').focus(function(){
   $('.icona-destra-footer i').toggleClass('fa-microphone fa-arrow-circle-right');
 }).blur(function() {

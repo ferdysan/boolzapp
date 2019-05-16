@@ -48,7 +48,8 @@
   height: 40px;
 }
 
-.fa-paper-plane
+.fa-paper-plane,
+.fa-search
 {
   cursor: pointer;
 }
@@ -92,16 +93,20 @@
 .messaggi{
   width: 400px;
   background-color: white;
-  display: flex;
-  flex-direction: row;
   padding: 40px;
+  position: relative;
+  text-align: center;
+}
+
+.fa-chevron-down{
+  position: absolute;
+  right: 10;
+
 }
 
 .messaggi.mine{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
   background-color: green;
+  text-align: center;
 }
 
 .contatti ul{
@@ -129,6 +134,8 @@
     border-radius: 50%;
     margin-right: 30px;
 }
+
+.cerca_utente{}
 
 .search-bar{
   width: 100%;

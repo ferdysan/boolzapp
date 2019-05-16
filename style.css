@@ -68,22 +68,25 @@
   justify-content: center;
 }
 
-.container_messaggi_sinistra{
+/* STILE PER I MESSAGGIO E LE DIREZIONI IN BASE ALL'UTENTE CHE SCRIVE */
+.container_messaggi{
   width: 100%;
   margin-bottom: 20px;
   padding: 20px;
   display: flex;
-  justify-content: flex-start;
   flex-direction: row;
 }
 
-.container_messaggi_detra{
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 20px;
-  display: flex;
+.sinistra{
+  justify-content: flex-start;
+}
+
+.destra{
   justify-content: flex-end;
-  flex-direction: row;
+}
+
+.nascondi_template{
+  display: none;
 }
 
 .messaggi{

@@ -1,0 +1,136 @@
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+
+}
+
+.container-flex{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row-reverse ;
+}
+
+.area-mess,
+.area-contatti{
+  display: flex;
+  width: 70%;
+}
+
+.area-contatti{
+  display: flex;
+  width: 30%;
+}
+
+.area-mess{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-image: url('img/whatsapp.jpg');
+}
+
+.inserisci-mess{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+    background-color: #ddd;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.area-mess input,
+.search-bar input{
+  width: 90%;
+  height: 40px;
+}
+
+.fa-paper-plane
+{
+  cursor: pointer;
+}
+
+.contatti{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.area-contatti{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container_messaggi_sinistra{
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.container_messaggi_detra{
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.messaggi{
+  width: 400px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  padding: 40px;
+}
+
+.messaggi.mine{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: green;
+}
+
+.contatti ul{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contatti ul li{
+  display: flex;
+  list-style-type: none;
+  width: 100%;
+  align-items:center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.contatti ul li img{
+    width: 70px;
+    height: auto;
+    background-color: orange;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+
+.search-bar{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}

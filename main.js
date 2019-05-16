@@ -10,12 +10,12 @@
 // - Click sul contatto mostra la conversazione del contatto cliccato, è possibile inserire nuovi messaggi per ogni conversazione
 // - Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
 
-$('.fa-paper-plane').click(function() {
+$('.icona-destra-footer').click(function() {
 
   //inserisco un controllo per dire che solo se ci sta qualcosa nell'input messaggi allora pubblico altrimenti no
-  if($("input[type=text][name=messaggio_utente]").val()!=0){
+  if($(".input-messaggi").val()!=0){
     //leggo il meggaggio inserito dall'messaggio_utente
-    var messaggio_utente =$("input[type=text][name=messaggio_utente]").val();
+    var messaggio_utente =$(".input-messaggi").val();
     console.log(messaggio_utente);
     //copio la struttura del messaggio base
     var message_template =$('.container_messaggi.nascondi_template').clone();
@@ -28,5 +28,16 @@ $('.fa-paper-plane').click(function() {
 
     // INDERISCO ORA LA VARIABILE message_template DENTRO LA MIA STRUTTURA HTML
     $('.contenitore_messaggi_veri').append(message_template);
+
+    //RESETTO LA INPUT
+    $(".input-messaggi").val('');
   }
+});
+
+//cambio l'icona al focus
+
+$('.input-messaggi').focus(function(){
+  $('.icona-destra-footer i').toggleClass('fa-microphone fa-arrow-circle-right');
+}).blur(function() {
+  $('.icona-destra-footer i').toggleClass('fa-microphone fa-arrow-circle-right');
 });

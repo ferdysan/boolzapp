@@ -2,29 +2,31 @@
 // Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
 // Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e cliccando invia il testo viene aggiunto al thread sopra, come messaggio verde
 
+// Milestone 2
+// - Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+// - Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+
+// Milestone 3
+// - Click sul contatto mostra la conversazione del contatto cliccato, è possibile inserire nuovi messaggi per ogni conversazione
+// - Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
+
 $('.fa-paper-plane').click(function() {
-  //leggo il meggaggio inserito dall'messaggio_utente
-  var messaggio_utente =$("input[type=text][name=messaggio_utente]").val();
-  console.log(messaggio_utente);
-  //copio la struttura del messaggio base
-  var message_template =$('.container_messaggi').clone();
 
-  message_template.removeClass('nascondi_template');
-  //COPIO NEL FIGLIO MESSAGGI DI CONTAINER_MESSAGGI IL MESSAGGIO RICEVUTO IN INPUT DALL'UTENTE
-  message_template.addClass('destra').children('messaggi').html(messaggio_utente);
+  //inserisco un controllo per dire che solo se ci sta qualcosa nell'input messaggi allora pubblico altrimenti no
+  if($("input[type=text][name=messaggio_utente]").val()!=0){
+    //leggo il meggaggio inserito dall'messaggio_utente
+    var messaggio_utente =$("input[type=text][name=messaggio_utente]").val();
+    console.log(messaggio_utente);
+    //copio la struttura del messaggio base
+    var message_template =$('.container_messaggi.nascondi_template').clone();
 
-  // INDERISCO ORA LA VARIABILE message_template DENTRO LA MIA STRUTTURA HTML
-  $('.contenitore_messaggi_veri').append(message_template);
+    console.log(message_template);
 
+    message_template.removeClass('nascondi_template');
+    //COPIO NEL FIGLIO MESSAGGI DI CONTAINER_MESSAGGI IL MESSAGGIO RICEVUTO IN INPUT DALL'UTENTE
+    message_template.addClass('destra').children('.messaggi').addClass('mine').html(messaggio_utente);
+
+    // INDERISCO ORA LA VARIABILE message_template DENTRO LA MIA STRUTTURA HTML
+    $('.contenitore_messaggi_veri').append(message_template);
+  }
 });
-
-//SUGGERIMENTI DI CODICE DA PARTE DI SOFIA
-
-//
-// var message_template = $('.message_container.template').clone();
-//
-// message_template.removeClass('template');
-//
-// message_template.children('message').html('<p>lorem imsum</p>');
-//
-// $('.real_messages_container').append(message_template);

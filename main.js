@@ -19,7 +19,7 @@ $('.icona-destra-footer').click(function() {
 function risposta_pc(){
   var message_template =$('.container_messaggi.ricevuti.nascondi_template').clone();
   message_template.removeClass('nascondi_template');
-  message_template.children('testo-messaggi').text('ok');
+  message_template.find('.testo-messaggi').html('ok');
   $('.contenitore_messaggi_veri').append(message_template);
 }
 
@@ -42,7 +42,7 @@ function send_message(){
 
     message_template.removeClass('nascondi_template');
     //COPIO NEL FIGLIO MESSAGGI DI CONTAINER_MESSAGGI IL MESSAGGIO RICEVUTO IN INPUT DALL'UTENTE
-    message_template.addClass('destra').children('.testo-messaggi').addClass('mine').html(messaggio_utente);
+    message_template.addClass('destra').find('.testo-messaggi').addClass('mine').html(messaggio_utente);
     // INDERISCO ORA LA VARIABILE message_template DENTRO LA MIA STRUTTURA HTML
     $('.contenitore_messaggi_veri').append(message_template);
     //RESETTO LA INPUT

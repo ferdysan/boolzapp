@@ -5,16 +5,21 @@
 
 }
 
+.active{
+  display: block !important;
+}
+
 .container-flex{
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: space-around;
   flex-direction: row-reverse ;
 }
 
 .contenitore_messaggi_veri{
   overflow-y: auto;
+  height: 100%;
+  padding: 100px;
 }
 
 .area-mess,
@@ -77,6 +82,15 @@
 
 }
 
+.menu-messaggi{
+  position:absolute;
+  background-color: white;
+  left: 200px;
+  width: 200px;
+  height: auto;
+  display: none;
+}
+
 /* STILE PER I MESSAGGIO E LE DIREZIONI IN BASE ALL'UTENTE CHE SCRIVE */
 .container_messaggi{
   width: 100%;
@@ -84,6 +98,16 @@
   padding: 20px;
   display: flex;
   flex-direction: row;
+  position: relative;
+}
+
+.elemento-menu{
+  padding: 20px;
+}
+
+.elemento-menu a{
+  text-decoration: none;
+  color: black;
 }
 
 .sinistra{
@@ -99,17 +123,17 @@
 }
 
 .messaggi{
-  width: 400px;
+  width: 200px;
   background-color: white;
-  padding: 40px;
+  padding: 20px;
   position: relative;
   text-align: center;
 }
 
 .fa-chevron-down{
   position: absolute;
-  right: 10;
-
+  right: 0;
+  cursor: pointer;
 }
 
 .messaggi.mine{
@@ -118,12 +142,12 @@
 }
 
 .contatti ul{
-  display: flex;
+  /* display: flex; */
   width: 100%;
   height: 100%;
   overflow: auto;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .contatti ul li{
@@ -143,9 +167,7 @@
     margin-right: 30px;
 }
 
-.cerca_utente{
 
-}
 
 .search-bar{
   width: 100%;

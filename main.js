@@ -86,5 +86,5 @@ $(document).on('click', '.icona-opzioni', function(){
 //INTEGRO LA CANCELLAZIONE DEL MESSAGGI
 
 $(document).on('click', '.cancella-mess', function(){
-  $(this).siblings('container_messaggi.ricevuti')
+  $(this).closest('.messaggi').hide();
 });
